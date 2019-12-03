@@ -1,4 +1,5 @@
 import tkinter as tk
+import datetime
 from tkinter import messagebox
 
 
@@ -17,7 +18,7 @@ def open_application():
     # create GUI itself
     cal_profit_date = tk.StringVar()
     numb_of_hotdogs = tk.IntVar()
-    sale_date = tk.StringVar()
+    sale_date = datetime.date.today()
     price = tk.DoubleVar()
     tk.Label(window, text="The Hotdog World", font=("Eras Bold ITC", 30), background="#90ee90", width=40,
                   height=2).grid(row=0,columnspan=2)
@@ -29,7 +30,7 @@ def open_application():
     tk.Entry(window, textvariable=numb_of_hotdogs).grid(sticky="W", row=3, column=1)
 
     tk.Label(window, text="Sale Date").grid(sticky="E", row=4, column=0, padx=15)
-    tk.Entry(window, textvariable=sale_date).grid(sticky="W",row=4, column=1)
+    tk.Label(window, text=sale_date).grid(sticky="W",row=4, column=1)
 
     tk.Label(window, text="Sale Price").grid(sticky="E", row=5, column=0, padx=15)
     tk.Entry(window, textvariable=price).grid(sticky="W", row=5, column=1)
